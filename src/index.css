@@ -1,16 +1,68 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  src: url("./assets/fonts/Manrope/Manrope-Regular.ttf") format("truetype");
   font-weight: 400;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  src: url("./assets/fonts/Manrope/Manrope-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  src: url("./assets/fonts/Manrope/Manrope-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  src: url("./assets/fonts/Montserrat/Montserrat-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+}
 
-  color-scheme: light dark;
-  color: black;
-  background-color: white;
+:root {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #121417;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #024c92;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #7139f5;
+    height: 20px;
+    border-radius: 15px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -23,22 +75,62 @@ p {
   margin: 0;
 }
 
-ul,
-ol {
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
-.title {
-  margin-bottom: 20px;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-body {
-  margin: 0;
+.container {
+  max-width: 320px;
+  /* padding: 0 20px; */
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    /* padding: 0 32px; */
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    /* padding: 0 16px; */
+  }
 }

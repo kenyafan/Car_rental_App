@@ -8,16 +8,8 @@ import Layout from "./components/Layout/Layout.jsx";
 import "./index.css";
 import Loader from "./components/Loader/Loader.jsx";
 import { selectIsRefreshing } from "./redux/auth/authSlice.js";
-import PrivateRoute from "./routes/PrivateRoute.jsx";
-import PublicRoute from "./routes/PublicRoute.jsx";
 
 const HomePage = lazy(() => import("./pages/Home/Home"));
-const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
-const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
-const RegistrationPage = lazy(() =>
-  import("./pages/RegistrationPage/RegistrationPage")
-);
-const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -32,33 +24,17 @@ const App = () => {
     <Suspense fallback={null}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          {/* <Route index element={<HomePage />} />
           <Route
-            path="contacts"
-            element={
-              <PrivateRoute>
-                <ContactsPage />
-              </PrivateRoute>
-            }
+            path="catalog"
+            element={}
           />
           <Route
-            path="/login"
-            element={
-              <PublicRoute>
-                <LoginPage />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <PublicRoute>
-                <RegistrationPage />
-              </PublicRoute>
-            }
-          />
+            path="favorites"
+            element={}
+          /> */}
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </Suspense>
   );
