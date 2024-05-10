@@ -1,0 +1,49 @@
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.input {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  &:focus {
+    outline: none;
+    border-color: orange;
+  }
+}
+.btn {
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #ccc;
+  color: black;
+  cursor: pointer;
+  margin: 0 auto;
+  &:hover {
+    background-color: orange;
+    color: white;
+    scale: 1.1;
+  }
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
