@@ -5,7 +5,7 @@ import {
   selectRental,
   selecFavoriteRental,
   selectMileage,
-} from "../filter/selectors";
+} from "../filters/selectors";
 
 export const selectCars = (state) => state.cars.cars;
 export const selectCarsAmount = (state) => state.cars.carsAmount;

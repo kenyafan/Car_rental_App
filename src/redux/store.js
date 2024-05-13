@@ -1,7 +1,10 @@
-import { carsReducer } from "./cars/slice";
 import { configureStore } from "@reduxjs/toolkit";
-import { filterReducer } from "./filter/slice";
+import { filterReducer } from "./filters/filtersSlice";
+import { carsReducer } from "./adverts/advertsSlice";
 
 export const store = configureStore({
-  reducer: { cars: carsReducer, filter: filterReducer },
+  reducer: {
+    filters: filterReducer,
+    cars: carsReducer,
+  },
 });
