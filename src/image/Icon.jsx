@@ -7,5 +7,3 @@ export const Icon = ({ id, size, className }) => {
     </svg>
   );
 };
-
-export default Icon;

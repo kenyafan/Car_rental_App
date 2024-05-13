@@ -2,11 +2,29 @@
   background: #3470ff;
   padding: 20px 0;
   color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+}
+.list {
   display: flex;
   gap: 20px;
-  justify-content: space-between;
-  align-items: center;
 }
-.logo {
-  fill: black;
+
+.logo_link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0px;
+}
+.title {
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 133%;
+}
+.link {
 }
