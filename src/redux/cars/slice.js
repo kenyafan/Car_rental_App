@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars, fetchAllCars } from "./operations";
+import { fetchCars, fetchAllCars, favoriteCar } from "./operations";
 
 const initialState = {
   cars: [],
@@ -32,6 +32,23 @@ export const slice = createSlice({
         payload.map((el) => {
           state.carsRentalPrice.push(Number(el.rentalPrice.slice(1)));
         });
+      })
+      .addCase(favoriteCar.fulfilled, (state, { payload }) => {
+        const CarFavorite = state.cars.find((el) => el.id === payload.id);
+        const findFavoriteCar = state.favoriteCars.find(
+          (el) => el.id === CarFavorite.id
+        );
+        if (findFavoriteCar) {
+          const findCars = state.favoriteCars.filter(
+            (el) => el.id !== CarFavorite.id
+          );
+          state.favoriteCars = findCars;
+        } else {
+          state.favoriteCars.push({
+            ...CarFavorite,
+            isActive: payload.isActive,
+          });
+        }
       });
   },
 });
