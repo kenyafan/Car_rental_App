@@ -1,0 +1,43 @@
+.filter {
+  display: flex;
+
+  max-width: 100%;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  width: 25%;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: #8a8a89;
+}
+.select {
+  border-radius: 14px;
+  padding: 14px 20px;
+  height: 48px;
+  outline: none;
+  border: 1px solid #8a8a89;
+}
+.mileage_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 8px;
+}
+.button {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 44px;
+  width: 136px;
+  height: 48px;
+  background: #3470ff;
+}

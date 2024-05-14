@@ -20,6 +20,9 @@
   height: 44px;
   background: #3470ff;
   cursor: pointer;
+  &:hover {
+    background-color: #0b44cd;
+  }
 }
 .wrapper {
   display: flex;
@@ -50,4 +53,21 @@
   right: 14px;
   fill: none;
   stroke: #fff;
+}
+.icon_favorite_checked {
+  stroke: #3470ff;
+  fill: #3470ff;
+}
+.visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

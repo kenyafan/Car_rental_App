@@ -60,6 +60,9 @@
   font-size: 14px;
   line-height: 1.42857;
   color: #fff;
+  &:hover {
+    background-color: #0b44cd;
+  }
 }
 
 .img {

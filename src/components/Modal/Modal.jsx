@@ -33,6 +33,8 @@ const Modal = ({ item, closeModal }) => {
   const ageMatch = conditionAge.match(/\d+/);
   const age = ageMatch ? ageMatch[0] : null;
 
+  const formattedMileage = new Intl.NumberFormat("en-US").format(mileage);
+
   const handleKeyDown = useCallback(
     (e) => {
       if (e.key === "Escape") {
@@ -95,7 +97,7 @@ const Modal = ({ item, closeModal }) => {
             <div className={s.conditions_flex}>
               <p>{conditionRequired}</p>
               <p>
-                Mileage:<span>{mileage}</span>
+                Mileage:<span>{formattedMileage}</span>
               </p>
               <p>
                 Price:<span>{rentalPrice}</span>
