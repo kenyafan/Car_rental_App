@@ -48,7 +48,7 @@
     width: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #024c92;
+    background: #3470ff;
   }
   ::-webkit-scrollbar-thumb {
     background: #7139f5;
@@ -60,7 +60,9 @@
 body {
   margin: 0;
 }
-
+* {
+  box-sizing: border-box;
+}
 html {
   scroll-behavior: smooth;
 }
