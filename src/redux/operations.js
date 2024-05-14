@@ -24,3 +24,39 @@ export const fetchCars = createAsyncThunk(
     }
   }
 );
+
+export const fetchNextCarsPage = createAsyncThunk(
+  "cars/fetchNextPage",
+  async (_, thunkAPI) => {
+    const { page } = thunkAPI.getState().cars;
+    try {
+      const { data } = await axios.get("adverts", {
+        params: { page: page + 1, limit: 12 },
+      });
+      const newData = data.map((item) => {
+        return { ...item, favorite: false };
+      });
+      return newData;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const filterCars = createAsyncThunk(
+  "cars/filterCars",
+  async (filter, thunkAPI) => {
+    const { page } = thunkAPI.getState().cars;
+    try {
+      const { data } = await axios.get("adverts", {
+        params: { page: 1, limit: 12, filter },
+      });
+      const newData = data.map((item) => {
+        return { ...item, favorite: false };
+      });
+      return newData;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

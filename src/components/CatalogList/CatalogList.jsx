@@ -1,12 +1,9 @@
-import {
-  incrementPage,
-  selectCars,
-  selectPage,
-} from "../../redux/advertsSlice";
+import { useEffect } from "react";
+import { selectCars, selectPage } from "../../redux/advertsSlice";
+import { fetchCars, fetchNextCarsPage } from "../../redux/operations";
 import CatalogItem from "../CatalogItem/CatalogItem";
 import s from "./CatalogList.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCars } from "../../redux/operations";
 
 function CatalogList() {
   const cars = useSelector(selectCars);
@@ -16,9 +13,14 @@ function CatalogList() {
 
   const dispatch = useDispatch();
 
-  const handleLoadMoreClick = () => {
-    dispatch(incrementPage());
-    dispatch(fetchCars({ page: page }));
+  useEffect(() => {
+    if (!cars.length) {
+      dispatch(fetchCars());
+    }
+  }, [dispatch, cars.length]);
+
+  const handleLoadMore = () => {
+    dispatch(fetchNextCarsPage());
   };
 
   const isLastPage = cars.length === itemsPerPage * page;
@@ -30,8 +32,8 @@ function CatalogList() {
           return <CatalogItem key={item.id} item={item} />;
         })}
       </ul>
-      {!isLastPage && (
-        <button onClick={handleLoadMoreClick} className={s.btn}>
+      {isLastPage && (
+        <button onClick={handleLoadMore} className={s.btn}>
           Load more
         </button>
       )}
