@@ -7,7 +7,7 @@ const Header = () => {
     <section className={s.header}>
       <div>
         <Link to="/" className={s.logo_link}>
-          <Icon size={40} id="logo" />
+          <Icon size={40} id="logo" className={s.logo_icon} />
           <p className={s.title}>Car Rental</p>
         </Link>
       </div>

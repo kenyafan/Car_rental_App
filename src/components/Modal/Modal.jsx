@@ -22,7 +22,6 @@ const Modal = ({ item, closeModal }) => {
     rentalConditions,
   } = item;
 
-  console.log(rentalConditions.split("\n"));
   const handleKeyDown = useCallback(
     (e) => {
       if (e.key === "Escape") {

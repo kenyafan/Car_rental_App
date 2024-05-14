@@ -1,13 +1,11 @@
 .header {
   background: #3470ff;
-  padding: 20px 0;
   color: white;
   padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  width: 100%;
+  margin-bottom: 20px;
 }
 .list {
   display: flex;
@@ -17,6 +15,8 @@
 .logo_link {
   display: flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
   gap: 15px;
   padding: 20px 0px;
 }
@@ -27,4 +27,13 @@
   line-height: 133%;
 }
 .link {
+  font-family: "Manrope";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  color: white;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) all 0.3s;
+}
+.link:hover {
+  color: #a6a6a6;
 }
